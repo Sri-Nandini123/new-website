@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box{
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        button{
+            padding: 10px 20px;
+            border: none;
+            background: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #quote{
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Random Quote Generator</h1>
+
+        <p id="quote">
+            Click the button to generate a quote.
+        </p>
+
+        <button onclick="generateQuote()">
+            Generate
+        </button>
+    </div>
+
+    <script>
+        const quotes = [
+            "Success comes from consistency.",
+            "Practice makes progress.",
+            "Code. Learn. Repeat.",
+            "Dream big and work hard.",
+            "Every expert was once a beginner."
+        ];
+
+        function generateQuote(){
+            let randomIndex = Math.floor(Math.random() * quotes.length);
+
+            document.getElementById("quote").innerText =
+                quotes[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
